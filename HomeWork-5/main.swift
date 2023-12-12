@@ -54,3 +54,25 @@ enum Transport {
 let result2: Transport = .car
 print ("\(result2.maxSpeedOfTransport) km/h")
 
+//3.Задание: Статусы платежей
+
+enum PaymentStatus {
+    case unpaid
+    case inProcessing
+    case paid
+    case error
+    var StatusPayment: String {
+        switch self {
+        case.unpaid:
+            return "Неоплачено"
+        case.inProcessing:
+            return "Платеж в обработке"
+        case.paid:
+            return "Оплачено. Дата платежа 12.12.2023"
+        case.error:
+            return "Ошибка. Попробуйте повторить транзацию"
+        }
+    }
+}
+let result3: PaymentStatus = .paid
+print (result3.StatusPayment)
