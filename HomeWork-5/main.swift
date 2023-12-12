@@ -120,3 +120,28 @@ enum AnimalType {
 let result5: AnimalType = .insect
 print (result5.diet)
 
+//6.Задание: Статус заказа в ресторане
+
+enum OrderStatus: String {
+    case received
+    case prepared = "Готовится"
+    case readyToServe = "Готов к выдаче"
+    case delivered = "Доставляется"
+    
+    var nextStatus: String {
+        switch self {
+        case.received:
+            return "Следующий статус: \(OrderStatus.prepared.rawValue)"
+        case.prepared:
+            return "Следующий статус: \(OrderStatus.readyToServe.rawValue)"
+        case.readyToServe:
+            return "Следующий статус: \(OrderStatus.delivered.rawValue)"
+        case.delivered:
+            return ""
+        }
+    }
+}
+let result6: OrderStatus = .prepared
+print (result6.nextStatus)
+
+
