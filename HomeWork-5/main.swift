@@ -243,3 +243,18 @@ let result9: Cloudiness = .cloudy
 print(result9.rainfallProbability)
 
 
+//10.Задание:Цены напитков в автомате
+
+enum DrinkType: Int {
+    case coffee = 35
+    case tea = 27
+    case hotChocolate = 30
+    case water = 15
+}
+
+func costOfDrink(_ drink: DrinkType) -> Int {
+    drink.rawValue
+}
+
+print(costOfDrink(.water))
+
