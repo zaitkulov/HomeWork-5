@@ -178,5 +178,41 @@ let result7: RoomType = .luxuryRoom
 print(result7.price)
 print(result7.numberOfAvailable)
 
+//8.Задание: Уровни сложности в игре
 
+enum DifficultyLevel {
+    case easy
+    case medium
+    case heavy
+    case expert
 
+    var enemyCount: Int {
+        switch self {
+        case .easy:
+            return 10
+        case .medium:
+            return 30
+        case .heavy:
+            return 50
+        case .expert:
+            return 100
+        }
+    }
+
+    var timeLimit: String {
+        switch self {
+        case .easy:
+            return "15 min"
+        case .medium:
+            return "30 min"
+        case .heavy:
+            return "45 min"
+        case .expert:
+            return "60 min"
+        }
+    }
+}
+
+let result8: DifficultyLevel = .expert
+print(result8.enemyCount)
+print(result8.timeLimit)
