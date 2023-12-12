@@ -100,3 +100,23 @@ enum CameraMode {
 let result4: CameraMode = .nightly
 print (result4.ChoiceCameraMode)
 
+//5.Задание: Диеты Животных в зоопарке
+
+enum AnimalType {
+    case predator
+    case herbivore
+    case insect
+    var diet: String {
+        switch self {
+        case.predator:
+            return "Хищники устроены-настроены природой не на растительную пищу, а на пищу животную. Они кушают других животных"
+        case.herbivore:
+            return "Травоядные питаются частями деревьев и различными растениями"
+        case.insect:
+            return "Одни насекомые питаются растениями (корни, стебли, листья), семенами, фруктами, вторые (хищные насекомые) питаются другими насекомыми"
+        }
+    }
+}
+let result5: AnimalType = .insect
+print (result5.diet)
+
