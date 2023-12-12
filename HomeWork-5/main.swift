@@ -216,3 +216,30 @@ enum DifficultyLevel {
 let result8: DifficultyLevel = .expert
 print(result8.enemyCount)
 print(result8.timeLimit)
+
+//9.Задание: Прогноз погоды по облачности
+
+enum Cloudiness {
+    case clear
+    case partlyCloudy
+    case cloudy
+    case overcast
+
+    var rainfallProbability: String {
+        switch self {
+        case .clear:
+            return "7%"
+        case .partlyCloudy:
+            return "22%"
+        case .cloudy:
+            return "54%"
+        case .overcast:
+            return "73%"
+        }
+    }
+}
+
+let result9: Cloudiness = .cloudy
+print(result9.rainfallProbability)
+
+
