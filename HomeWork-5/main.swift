@@ -30,3 +30,27 @@ enum Season {
 let result1: Season = .summer
 print(result1.averageTemperature)
 
+//2.Задание: Информация о транспортных средствах
+
+enum Transport {
+    case car
+    case bike
+    case train
+    case airplane
+    
+    var maxSpeedOfTransport: Double {
+        switch self {
+        case.car:
+            return 508.73
+        case.bike:
+            return 40
+        case.train:
+            return 574.8
+        case.airplane:
+            return 8200.8
+        }
+    }
+}
+let result2: Transport = .car
+print ("\(result2.maxSpeedOfTransport) km/h")
+
