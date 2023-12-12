@@ -258,3 +258,44 @@ func costOfDrink(_ drink: DrinkType) -> Int {
 
 print(costOfDrink(.water))
 
+//11.Имитация запроса в сеть
+
+enum ResultRequest {
+    case success(String)
+    case failure(String)
+}
+
+var resultData: [Int : String] = [
+                                   1: "Данные получены",
+                                   2: "Отсутствуует подключение к интернету",
+                                   3: "Сервер не отвечает"
+                                 ]
+let resultRequestData = resultData.randomElement()
+
+func fetchData(for request: String) -> ResultRequest {
+    guard let requestData = resultRequestData else { return ResultRequest.failure("Запрос не отправлен")}
+    
+    for (key, value) in [requestData] {
+        switch key {
+        case 1:
+            return ResultRequest.success(value)
+        case 2:
+            return ResultRequest.failure(value)
+        case 3:
+            return ResultRequest.failure(value)
+        default:
+            return ResultRequest.failure("Ошибка \(resultData[key] ?? "")")
+        }
+    }
+    return .failure("Некоторый fallback-кейс")
+}
+    
+    let result11 = fetchData(for: "weidz")
+    switch result11 {
+    case.success (let data):
+        print("Data: \(data)")
+    case.failure (let errorMassage):
+        print("Error: \(errorMassage)")
+    }
+
+
